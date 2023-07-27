@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+
+    backend:
+        build: './tz'
+        container_name: backend
+        restart: always
+        ports:
+            - 8000:8000
+
+        #  Для боевого проекта рекомендуется переменные env сохранить в git secrets
+        environment:
+            - SECRET_KEY=somesecretkey
